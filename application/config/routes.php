@@ -386,6 +386,8 @@ $route['api/rest/admin/logs']['GET'] = 'RestAdmin/logs';
 
 //_______________________________________________
 //Default controllers
+$route['vuejs'] = 'pages/vuejs';
+$route['vuejs/(:any)'] = 'pages/vuejs';
 $route['default_controller'] = 'leaves';
 $route['404_override'] = 'pages/notfound';
 $route['(:any)'] = 'pages/view/$1';

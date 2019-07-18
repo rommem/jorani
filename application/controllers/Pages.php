@@ -73,4 +73,15 @@ class Pages extends CI_Controller {
         }
     }
 
+    /**
+     * Experimental VueJs WebUI
+     * @author Benjamin BALET <benjamin.balet@gmail.com>
+     */
+    public function vuejs() {
+        $data = getUserContext($this);
+        $data['title'] = 'Jorani';
+        $data['languageCode'] = $this->language_code;
+        $this->load->view('templates/vuejs', $data);
+    }
+
 }
