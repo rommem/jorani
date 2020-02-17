@@ -519,6 +519,8 @@ $config['ga_send_userid'] = FALSE;
 //____________________________________________________________________________
 //LDAP configuration
 $config['ldap_enabled'] = FALSE;
+$config['ldap_ssl_enabled'] = TRUE;
+$config['ldap_uri'] = 'ldaps://xxxx.fr';
 $config['ldap_host'] = '127.0.0.1';
 $config['ldap_port'] = 389;
 $config['ldap_basedn'] = 'uid=%s,ou=people,dc=company,dc=com';  //Change the pattern, but let %s that symbolizes the user identifier
