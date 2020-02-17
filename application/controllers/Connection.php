@@ -126,7 +126,12 @@ class Connection extends CI_Controller {
             $loggedin = FALSE;
             if ($this->config->item('ldap_enabled') === TRUE) {
                 if ($password != "") { //Bind to MS-AD with blank password might return OK
-                    $ldap = ldap_connect($this->config->item('ldap_host'), $this->config->item('ldap_port'));
+                    if ($this->config->item('ldap_ssl_enabled') === TRUE) {
+						$ldap = ldap_connect($this->config->item('ldap_uri'));
+					}
+					else {
+						$ldap = ldap_connect($this->config->item('ldap_host'), $this->config->item('ldap_port'));
+					}
                     ldap_set_option($ldap, LDAP_OPT_PROTOCOL_VERSION, 3);
                     set_error_handler(function() { /* ignore errors */
                     });
